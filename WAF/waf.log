@@ -1,0 +1,7 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8082
+ * Running on http://172.28.0.3:8082
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:root:Received POST request with data: {'name': 'John', 'age': 30}
+INFO:werkzeug:172.28.0.4 - - [06/May/2024 09:20:21] "POST / HTTP/1.1" 200 -
