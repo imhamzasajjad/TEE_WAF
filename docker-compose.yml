@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  client:
+    build: ./client
+    depends_on:
+      - server
+    networks:
+      - mynetwork
+
+  server:
+    build: ./server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - ml
+      - waf
+    volumes:
+      - ./server:/app
+    networks:
+      - mynetwork
+
+  ml:
+    build: ./ml
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./ml:/app
+    networks:
+      - mynetwork
+
+  waf:
+    build: ./waf
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./waf:/app
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
